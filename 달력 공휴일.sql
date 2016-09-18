@@ -1,4 +1,3 @@
-DROP TABLE  [dbo].[TLS_CALENDAR]
 
 CREATE TABLE [dbo].[TLS_CALENDAR](
  [YMD] [char](8) NOT NULL,
@@ -32,7 +31,7 @@ declare @day char(8)
    select @i = @i + 1
   END
 
-  -- dayno 1:금요일 / 2:토요일 / 3:일요일 / 4:월요일 / 5:화요일 / 6:수요일 / 7:목요일 --
+  -- dayno 1:금요일 / 2:토요일 / 3:일요일 / 4:월요일 / 5:화요일 / 6:수요일 / 7:목요일 
 
 update [dbo].[TLS_CALENDAR] set HOLIDAY = '신정' where ymd = '20160101'
 update [dbo].[TLS_CALENDAR] set HOLIDAY = '설날연휴' where ymd = '20160207'

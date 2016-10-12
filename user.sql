@@ -1,9 +1,9 @@
-USE MASICKDANG
+USE MASICKDANG;
 
 
-Create Table dbo.USERS 
+Create Table dbo.USERS
 (
-	CustomerID Int Primary Key, 
+	CustomerID Int Identity(1,1) Not Null, 
 	UserID VarChar(25) Not Null, 
 	NickName VarChar(25) Not Null, 
 	[Password] VarChar(100) Not Null, 
@@ -12,12 +12,13 @@ Create Table dbo.USERS
 	BirthMonth VarChar(2)  Not Null, 
 	BirthDay VarChar(2)  Not Null,
 	EmailAddress VarChar(50) Not Null, 
-	JoinDate DateTime Default GetDate() 
+	JoinDate DateTime Default GetDate(),
+	Primary Key(CustomerID, UserID)
 )
 
+Insert Into USERS Values('testId', '테스트', 'testPassword', 'W', 1988, 08, 21, 'ddd@ddd.dd', GetDate())  
+Insert Into USERS Values('testId1', '테스트1', 'testPassword1', 'W', 1988, 08, 21, 'ddd@ddd.dd', GetDate())  
 
-
-USE MASICKDANG
 
 Create Table dbo.REVIEWS 
 (
